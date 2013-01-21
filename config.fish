@@ -54,11 +54,11 @@ end
 bind \cr "rake"
 
 function ss -d "Run the script/server"
-	script/server
+	rails server
 end
 
 function sc -d "Run the Rails console"
-	script/console
+	rails console
 end
 
 if test -d "/opt/java"
