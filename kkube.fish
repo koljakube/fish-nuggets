@@ -32,12 +32,13 @@ function parse_git_dirty -d "sets color to red or green depending on the status 
   end
 end
 function fish_prompt -d "Write out the prompt"
+  printf '%s%s' (set_color normal) (date +%H:%M:%S)
 
 	# Color writeable dirs green, read-only dirs red
 	if test -w "."
-		printf '%s%s' (set_color green) (prompt_pwd)
+		printf ' %s%s' (set_color green) (prompt_pwd)
 	else
-		printf '%s%s' (set_color red) (prompt_pwd)
+		printf ' %s%s' (set_color red) (prompt_pwd)
 	end
 
   # Print subversion tag or branch
